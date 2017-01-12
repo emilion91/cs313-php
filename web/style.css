@@ -1,9 +1,9 @@
-.div1start {
+.div1 {
 	background-color: #013ADF;
 	font-size: 4em;
 }
 
-.divChange{
+.div2{
 	font-size: 1em;
 }
 
@@ -15,6 +15,6 @@
 	background-color: #FF4000
 }
 
-.divhover:hover{
+.bold:hover{
 	font-weight: bold;
 }
