@@ -1,5 +1,5 @@
-.div1 {
-	background-color: #00BB65;
+.div1start {
+	background-color: #013ADF;
 	font-size: 4em;
 }
 
@@ -8,11 +8,11 @@
 }
 
 div2{
-	background-color: #5DD0EF;
+	background-color: #BFFF00;
 }
 
 div3{
-	background-color: #88DF44
+	background-color: #FF4000
 }
 
 .divhover:hover{
