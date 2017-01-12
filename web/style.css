@@ -1,0 +1,20 @@
+.div1 {
+	background-color: #00BB65;
+	font-size: 4em;
+}
+
+.divChange{
+	font-size: 1em;
+}
+
+div2{
+	background-color: #5DD0EF;
+}
+
+div3{
+	background-color: #88DF44
+}
+
+.divhover:hover{
+	font-weight: bold;
+}
