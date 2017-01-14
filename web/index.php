@@ -16,6 +16,7 @@
 	
 	<nav>
 		<ul>
+			<li><a class="bold" href="hello.html">Hellow World</a></li>
 			<li><a class="bold" href="assignments.html">Assigments</a></li>
 		</ul>
 	</nav>
