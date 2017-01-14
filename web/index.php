@@ -26,7 +26,7 @@
 		
 		<p>My name is Cesar de Leon and I am from a little country to the south of 
 		Mexico called Guatemala. I was born there in 1991 which means that I 
-		currently have 25 years of age.</p>
+		currently am 25 years old.</p>
 		<p>My passions are: movies, Tv shows, music (I play the ukulele) and coding.
 		I also love hiking and taking pictures of me looking at cool stuff.</p>
 		
