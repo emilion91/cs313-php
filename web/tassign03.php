@@ -49,7 +49,5 @@ session_start();
         <input type="submit" name="submit" value="Submit"> 
       </form>
     </section>
-    <!-- imports the footer from a separate php file -->  
-    <?php include 'modules/footer.php'; ?>
   </body>
 </html>

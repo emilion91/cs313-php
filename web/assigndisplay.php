@@ -57,6 +57,5 @@ session_start();
           <span><?php echo " - " . $_SESSION['comments']; ?></span><br>
 
         </section
-    <?php include 'modules/footer.php'; ?>
   </body>
 </html>
