@@ -19,6 +19,7 @@
 			<li><a class="bold" href="hello.html">Hellow World</a></li>
 			<li><a class="bold" href="assignments.html">Assigments</a></li>
 			<li><a class="bold" href="tassign03.php">Team Assigment 03</a></li>
+            <li><a class="bold" href="week5/assign.php">Week 05 team assign</a></li>
 		</ul>
 	</nav>
 	
