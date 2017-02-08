@@ -5,7 +5,20 @@ session_start();
 <html>
 
 <head>
-    <title>Warehouse Manager <?php echo " " . $_SESSION['fistn'] . " " . $_SESSION['lastn'];?></title>
+    <title>Warehouse
+        <?php
+
+        switch ($_SESSION['clearence']){
+            case "1";
+                echo "General Manager";
+                break;
+            case "2";
+                echo "Manager";
+                break;
+            default;
+                echo "Employee";
+
+        ?></title>
 <link rel="stylesheet" type="text/css" href="basicstyle.css">
     </head>
     <body>
@@ -22,17 +35,10 @@ session_start();
 	</nav>
 	
 	<article>
-    <h1>Welcome to the Warehouse Manager</h1>
-    <h2>Please login<h2>
-	<form action="accountconfirm.php" method="post" id="ourform">
-    <fieldset>
-    <label>Email:</label>
-    <input id="email" name="email" type="text" required="required" />
-    <label>Password:</label>
-    <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" name="submit" id="submit" required="required" />
-    </fieldset>
-    </form>
+      <?php
+      echo "Welcome back " . $_SESSION['firstn'] . " " . $_SESSION['lastn'] . "<br />";
+      ?>
+	
 	</article>
 
 	<footer>
