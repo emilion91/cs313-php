@@ -35,7 +35,14 @@ $password = $_SESSION['password'];
       echo $email;
       echo $password;
   }else{
-      echo "<p>You have successfully logged in" . $myrow['firstn'] . " " . $myrow['lastn'] . "</p><br />";
+      $_SESSION['employeeid'] = $myrow['employeeid'];
+      $_SESSION['firstn'] = $myrow['firstn'];
+      $_SESSION['lastn'] = $myrow['lastn'];
+      $_SESSION['clearence'] = $myrow['clearence'];
+      $_SESSION['whid'] = $myrow['whid'];
+
+      echo "<p>You have successfully logged in " . $myrow['firstn'] . " " . $myrow['lastn'] . "</p><br />";
+      echo "<a href=\"profile.php\">Click here to go to your profile!</a>";
       }
   ?>
 </body>
