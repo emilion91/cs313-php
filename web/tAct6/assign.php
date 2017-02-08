@@ -18,18 +18,18 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 		<form action="t06Results.php" method="post" id="ourform">
 		<fieldset>
 		<label>Enter Book Name:</label>
-		<input id="book_search" name="book_search" type="text" />
+		<input id="book_search" name="book_search" type="text" /><br />
     <label>Enter Chapter:</label>
-    <input id="chapter_search" name="chapter_search" type="number" />
+    <input id="chapter_search" name="chapter_search" type="number" /><br />
     <label>Enter Verse:</label>
-    <input id="verse_search" name="verse_search" type="number" />
+    <input id="verse_search" name="verse_search" type="number" /><br />
     <label>Content:</label>
-    <textarea rows="5" cols="6" />
+    <textarea rows="5" cols="6"></textarea><br />
     <label for="topic">Topics</label>
 
     <?php
 
-foreach ( $result as $key => $topic ) { echo '<label for="topic' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]" id="topic' . $key . '" value="' . $topic['name'] . '" />'; }
+foreach ( $result as $key => $topic ) { echo '<label for="topic' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]"' . $key . '" value="' . $topic['name'] . '" />'; }
     ?>
 
 
