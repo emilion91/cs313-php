@@ -32,6 +32,8 @@ echo $password;
   if ($myrow == FALSE){
       echo "<p>Your Email or Password are incorrect</p> <br />";
       echo "<a href=\"login.php\">Try Again!</a>";
+      echo $email;
+      echo $password;
   }else{
       echo "<p>You have successfully logged in</p><br />";
       }
