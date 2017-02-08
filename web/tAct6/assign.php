@@ -19,17 +19,23 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 		<fieldset>
 		<label>Enter Book Name:</label>
 		<input id="book_search" name="book_search" type="text" /><br />
+    <br />
     <label>Enter Chapter:</label>
     <input id="chapter_search" name="chapter_search" type="number" /><br />
+    <br />
     <label>Enter Verse:</label>
     <input id="verse_search" name="verse_search" type="number" /><br />
+    <br />
     <label>Content:</label>
-    <textarea rows="5" cols="6"></textarea><br />
-    <label for="topic">Topics</label>
+    <textarea rows="5" cols="6"></textarea><br /><br />
 
     <?php
 
-foreach ( $result as $key => $topic ) { echo '<label for="topic' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]"' . $key . '" value="' . $topic['name'] . '" />'; }
+    //foreach ( $result as $name ) { echo '<label for="' . $topic['name'] . '" ' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]"' . $key . '" value="' . $topic['name'] . '" />'; }
+
+    while($myrow = pg_fetch_assoc($result)){
+        echo '<label for="' . $myrow['name'] . '">' . $myrow['name'] . '</label><input type="checkbox" name="' . $myrow['name'] . ' value="' . $myrow['id'] . '"><br />';
+        }
     ?>
 
 
