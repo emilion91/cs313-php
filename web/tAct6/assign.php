@@ -1,7 +1,21 @@
 <!doctype html>
 <html>
     <body>
-		<form action="t05Results.php" method="post" id="ourform">
+ <?php 
+$db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
+ password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
+
+ $query = "SELECT * FROM topic";
+
+ $result = pg_query($query);
+ if (!$result){
+     echo "Problem with the query " . $query . "<br />";
+     echo pg_last_error();
+     exit();
+ }
+        ?>
+
+		<form action="t06Results.php" method="post" id="ourform">
 		<fieldset>
 		<label>Enter Book Name:</label>
 		<input id="book_search" name="book_search" type="text" />
@@ -9,6 +23,15 @@
     <input id="chapter_search" name="chapter_search" type="number" />
     <label>Enter Verse:</label>
     <input id="verse_search" name="verse_search" type="number" />
+    <label>Content:</label>
+    <textarea rows="5" cols="6" />
+    <label for="topic">Topics</label>
+
+    <?php
+
+foreach ( $result as $key => $topic ) { echo '<label for="topic' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]" id="topic' . $key . '" value="' . $topic['name'] . '" />'; }
+    ?>
+
 
 		<input type="submit" value="Insert" name="submit" id="submit"/>
 		</fieldset>
