@@ -34,6 +34,8 @@ echo $password;
       echo "<a href=\"login.php\">Try Again!</a>";
       echo $email;
       echo $password;
+      echo $_SESSION['email'];
+      echo $_SESSION['password'];
   }else{
       echo "<p>You have successfully logged in</p><br />";
       }
