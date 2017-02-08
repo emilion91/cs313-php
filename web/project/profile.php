@@ -5,7 +5,6 @@ session_start();
 <html>
 
 <head>
-    <title>Warehouse
         <?php
 
         switch ($_SESSION['clearence']){
@@ -18,7 +17,8 @@ session_start();
             default;
                 echo "Employee";
 
-        ?></title>
+        ?>
+            <title> </title>
 <link rel="stylesheet" type="text/css" href="basicstyle.css">
     </head>
     <body>

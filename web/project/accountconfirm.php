@@ -13,11 +13,8 @@ session_start();
 $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
  password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
 
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['password'] = $_POST['password'];
-
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
         $query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
 
@@ -40,6 +37,8 @@ $password = $_SESSION['password'];
       $_SESSION['lastn'] = $myrow['lastn'];
       $_SESSION['clearence'] = $myrow['clearence'];
       $_SESSION['whid'] = $myrow['whid'];
+      $_SESSION['email'] = $_POST['email'];
+
 
       echo "<p>You have successfully logged in " . $myrow['firstn'] . " " . $myrow['lastn'] . "</p><br />";
       echo "<a href=\"profile.php\">Click here to go to your profile!</a>";
