@@ -16,6 +16,9 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
   $email = $_SESSION['email'];
   $password = $_SESSION['password'];
 
+echo $email;
+echo $password;
+
         $query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
 
         $result = pg_query($query);
@@ -32,8 +35,6 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
   }else{
       echo "<p>You have successfully logged in</p><br />";
       }
-
-  echo "<p>Getting here</p>";
   ?>
 </body>
 </html>
