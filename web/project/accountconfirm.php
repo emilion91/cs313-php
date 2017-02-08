@@ -13,11 +13,13 @@ session_start();
 $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
  password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
 
-  $email = $_SESSION['email'];
-  $password = $_SESSION['password'];
+echo htmlspecialchars($_SESSION['email']);
+echo htmlspecialchars($_SESSION['password']);
+//$_SESSION['email'] = $_POST['email'];
+//$_SESSION['password'] = $_POST['password'];
 
-echo $email;
-echo $password;
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
 
         $query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
 
