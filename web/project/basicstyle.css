@@ -1,0 +1,18 @@
+#div1 {
+	background-color: #013ADF;
+	font-size: 4em;
+}
+
+#div2{
+	background-color: #BFFF00;
+	font-size: 5em;
+}
+
+#div3{
+	background-color: #FF4000;
+	font-size: 3em;
+}
+
+.bold:hover{
+	font-weight: bold;
+}
