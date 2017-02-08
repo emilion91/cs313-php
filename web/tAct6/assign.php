@@ -26,7 +26,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
     <label>Enter Verse:</label>
     <input id="verse_search" name="verse_search" type="number" /><br />
     <br />
-    <label>Content:</label>
+    <label>Content:</label><br />
     <textarea rows="5" cols="6"></textarea><br /><br />
 
     <?php
