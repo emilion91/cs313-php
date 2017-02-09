@@ -31,10 +31,10 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
     <?php
 
-    //foreach ( $result as $name ) { echo '<label for="' . $topic['name'] . '" ' . $key . '">' . $topic['name'] . '</label>'; echo '<input type="checkbox" name="topic[]"' . $key . '" value="' . $topic['name'] . '" />'; }
+    //foreach ( $result as $name ) { echo '<label for="' . $topic['name'] . '" ' . $key . '">' . $topic['name'] . '</label>'; echo '<input id="topic" type="checkbox" name="topic[]"' . $key . '" value="' . $topic['name'] . '" />'; }
 
     while($myrow = pg_fetch_assoc($result)){
-        echo '<label for="' . $myrow['name'] . '">' . $myrow['name'] . '</label><input type="checkbox" name="' . $myrow['name'] . ' value="' . $myrow['id'] . '"><br />';
+        echo '<label for="' . $myrow['name'] . '">' . $myrow['name'] . '</label><input id="topic" type="checkbox" name="' . $myrow['name'] . ' value="' . $myrow['id'] . '"><br />';
         }
     ?>
 		<input type="submit" value="Insert" name="submit" id="submit"/>
