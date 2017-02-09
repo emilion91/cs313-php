@@ -13,12 +13,7 @@ $chapter = $_POST['chapter'];
 $verse = $_POST['verse'];
 $content = $_POST['content'];
 
-echo $book;
-echo $chapter;
-echo $verse;
-echo $content;
-
-$query = 'INSERT INTO scripture(id, book, chapter, verse, content) VALUES ( 7, ' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')';
+$query = 'INSERT INTO scriptures (id, book, chapter, verse, content) VALUES ( 7, ' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')';
 
 $result = pg_query($query);
 if (!$result){
