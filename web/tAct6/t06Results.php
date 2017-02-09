@@ -37,6 +37,8 @@ $id = $myrow['id'];
 
 $max = sizeof($topic);
 
+print_r($topic);
+
 for($i = 0; $i < $max; $i++)
 {
     $query = "INSERT INTO manytomany (scriptureid, topicid) VALUES ('$id', '$topic[$i]')";
