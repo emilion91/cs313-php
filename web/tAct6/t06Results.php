@@ -16,6 +16,11 @@ $content = $_POST['content'];
 $query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES( 7, ' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')';
 
 $result = pg_query($query);
+if (!$result){
+    echo "Problem with the query " . $query . "<br />";
+    echo pg_last_error();
+    exit();
+    }
 
 //$statement->bindValue(':book', $book);
 //$statement->bindValue(':chapter', $chapter);
