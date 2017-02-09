@@ -12,6 +12,7 @@ $book = $_POST['book'];
 $chapter = $_POST['chapter'];
 $verse = $_POST['verse'];
 $content = $_POST['content'];
+$topic = $_POST['topic'];
 
 $query = "INSERT INTO scriptures (book, chapter, verse, content) VALUES ( '$book', '$chapter', '$verse', '$content')";
 
@@ -20,7 +21,34 @@ if (!$result){
     echo "Problem with the query " . $query . "<br />";
     echo pg_last_error();
     exit();
+}
+
+$query = "SELECT * FROM scriptures WHERE book='" . $book . "' AND content='" . $content . "'";
+
+$result = pg_query($query);
+        if (!$result) {
+            echo "Problem with query " . $query . "<br/>";
+            echo pg_last_error();
+            exit();
+        }
+
+$myrow = pg_fetch_assoc($result);
+$id = $myrow['id'];
+
+$max = sizeof($topic);
+
+for($i = 0; $i < $max; $i++)
+{
+    $query = "INSERT INTO manytomany (scriptureid, topicid) VALUES ('$id', '$topic[$i]')";
+    $result = pg_query($query);
+        if (!$result) {
+            echo "Problem with query " . $query . "<br/>";
+            echo pg_last_error();
+            exit();
+        }
+
     }
+
 
 //$statement->bindValue(':book', $book);
 //$statement->bindValue(':chapter', $chapter);
