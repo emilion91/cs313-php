@@ -32,7 +32,7 @@ $lastn = $_POST['lastn'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
+$query = "SELECT * FROM employees WHERE email='". $email ."'";
 
 $result = pg_query($query);
 if (!$result) {
@@ -43,11 +43,7 @@ if (!$result) {
 
 $myrow = pg_fetch_assoc($result);
 if ($myrow == FALSE){
-    echo "<p>Your Email or Password are incorrect</p> <br />";
-    echo "<a href=\"login.php\">Try Again!</a>";
-}else{
-
-$query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
+    $query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
 
 $result = pg_query($query);
 if (!$result) {
@@ -55,19 +51,20 @@ if (!$result) {
     echo pg_last_error();
     exit();
 }
-
-
-    echo "<h1>Account confirm</h1>"
-    echo "<h2>Please login<h2>"
-	echo "<form action=\"accountconfirm.php\" method=\"post\" id=\"ourform\">"
-    echo "<fieldset>"
-    echo "<label>Email:</label>"
-    echo "<input id=\"email\" name=\"email\" type=\"text\" required=\"required\" />"
-    echo "<label>Password:</label>"
-    echo "<input id=\"password\" name=\"password\" type=\"password\" />"
-    echo "<input type=\"submit\" value=\"Log In\" name=\"submit\" id=\"submit\" required=\"required\" />"
-    echo "</fieldset>"
-      echo "</form>"
+    echo "<h1>Account confirm</h1>";
+    echo "<h2>Please login<h2>";
+	echo "<form action=\"accountconfirm.php\" method=\"post\" id=\"ourform\">";
+    echo "<fieldset>";
+    echo "<label>Email:</label>";
+    echo "<input id=\"email\" name=\"email\" type=\"text\" required=\"required\" />";
+    echo "<label>Password:</label>";
+    echo "<input id=\"password\" name=\"password\" type=\"password\" />";
+    echo "<input type=\"submit\" value=\"Log In\" name=\"submit\" id=\"submit\" required=\"required\" />";
+    echo "</fieldset>";
+      echo "</form>";
+}else{
+echo "<p>This email is already in use</p> <br />";
+    echo "<a href=\"signin.php\">Try Again!</a>";
 }
 ?>
 	</article>
