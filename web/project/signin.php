@@ -40,23 +40,23 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
     <h2>Your Information<h2>
 	<form action="signinconfirm.php" method="post" id="ourform">
       <fieldset>
-<label>First Name:</label>
-    <input id="firstn" name="firstn" type="text" required="required" />
-<label>Last Name:</label>
-    <input id="lastn" name="lastn" type="text" required="required" />
-    <label>Email:</label>
-    <input id="email" name="email" type="text" required="required" />
-    <label>Password:</label>
-    <input id="password" name="password" type="password" />
-<label>Confirm Passwork:</label>
-    <input id="passconf" name="passconf" type="text" required="required" />
-    <label>Warehouse:</label>
+          <label>First Name:</label><br />
+          <input id="firstn" name="firstn" type="text" required="required" /><br />
+          <label>Last Name:</label><br />
+          <input id="lastn" name="lastn" type="text" required="required" /><br />
+    <label>Email:</label><br />
+    <input id="email" name="email" type="text" required="required" /><br />
+    <label>Password:</label><br />
+    <input id="password" name="password" type="password" /><br />
+    <label>Confirm Passwork:</label><br />
+    <input id="passconf" name="passconf" type="text" required="required" /><br />
+    <label>Warehouse:</label><br />
     <select name="warehouse">
 <?php
 
-//while($myrow = pg_fetch_assoc($result)){
-//echo "<option value="$myrow['warehouseid']">"$myrow['whname']"</option>"
-//}
+while($myrow = pg_fetch_assoc($result)){
+echo "<option value=" . $myrow['warehouseid'] . ">" . $myrow['whname'] . "</option>"
+}
 ?>
     </select>
     <input type="submit" value="Sign Up" name="submit" id="submit" required="required" />
