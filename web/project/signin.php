@@ -56,7 +56,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
 //while($myrow = pg_fetch_assoc($result)){
 //    echo "<option value=\"" . $myrow['warehouseid'] . ">" . $myrow['whname'] . //" </option>";
-}
+//}
 ?>
     </select>
     <input type="submit" value="Sign Up" name="submit" id="submit" required="required" />
