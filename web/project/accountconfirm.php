@@ -16,7 +16,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-        $query = "SELECT * FROM project.employees WHERE email='". $email . "' AND password='" . $password . "'";
+        $query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
 
         $result = pg_query($query);
         if (!$result) {
