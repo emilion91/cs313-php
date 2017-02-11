@@ -49,7 +49,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
     <label>Password:</label><br />
     <input id="password" name="password" type="password" /><br />
     <label>Confirm Passwork:</label><br />
-    <input id="passconf" name="passconf" type="text" required="required" /><br />
+    <input id="passconf" name="passconf" type="password" required="required" /><br />
     <label>Warehouse:</label><br />
     <select name="warehouse">
 <?php
