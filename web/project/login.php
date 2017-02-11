@@ -18,9 +18,9 @@ session_start();
 		<ul>
 			<li><a class="bold" href="aboutus.php">About Us</a></li>
 			<li><a class="bold" href="otheroption.php">Other Options</a></li>
+      <li><a class="bold" href="signin.php">Sign In</a></li>
 		</ul>
 	</nav>
-	
 	<article>
 		<h1>Welcome to the Warehouse Manager</h1>
       <h2>Please login<h2>
