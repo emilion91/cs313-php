@@ -16,7 +16,7 @@ $lastn = $_POST['lastn'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password'";
+$query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
 
 $result = pg_query($query);
 if (!$result) {
