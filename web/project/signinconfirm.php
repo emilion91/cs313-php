@@ -7,25 +7,7 @@ session_start();
 <head>
 <title>Sign Up Confirmation</title>
 <link rel="stylesheet" type="text/css" href="basicstyle.css">
-<?php
-    $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
- password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
 
-$firstn = $_POST['firstn'];
-$lastn = $_POST['lastn'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-$query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
-
-$result = pg_query($query);
-if (!$result) {
-    echo "Problem with query " . $query . "<br/>";
-    echo pg_last_error();
-    exit();
-}
-
-        ?>
 
     </head>
     <body>
@@ -41,17 +23,53 @@ if (!$result) {
     </ul>
 	</nav>
 	<article>
-    <h1>Account confirm</h1>
-    <h2>Please login<h2>
-	<form action="accountconfirm.php" method="post" id="ourform">
-    <fieldset>
-    <label>Email:</label>
-    <input id="email" name="email" type="text" required="required" />
-    <label>Password:</label>
-    <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" name="submit" id="submit" required="required" />
-    </fieldset>
-    </form>
+<?php
+    $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
+ password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
+
+$firstn = $_POST['firstn'];
+$lastn = $_POST['lastn'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$query = "SELECT * FROM employees WHERE email='". $email . "' AND password='" . $password . "'";
+
+$result = pg_query($query);
+if (!$result) {
+    echo "Problem with query " . $query . "<br/>";
+    echo pg_last_error();
+    exit();
+}
+
+$myrow = pg_fetch_assoc($result);
+if ($myrow == FALSE){
+    echo "<p>Your Email or Password are incorrect</p> <br />";
+    echo "<a href=\"login.php\">Try Again!</a>";
+}else{
+
+$query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
+
+$result = pg_query($query);
+if (!$result) {
+    echo "Problem with query " . $query . "<br/>";
+    echo pg_last_error();
+    exit();
+}
+
+
+    echo "<h1>Account confirm</h1>"
+    echo "<h2>Please login<h2>"
+	echo "<form action=\"accountconfirm.php\" method=\"post\" id=\"ourform\">"
+    echo "<fieldset>"
+    echo "<label>Email:</label>"
+    echo "<input id=\"email\" name=\"email\" type=\"text\" required=\"required\" />"
+    echo "<label>Password:</label>"
+    echo "<input id=\"password\" name=\"password\" type=\"password\" />"
+    echo "<input type=\"submit\" value=\"Log In\" name=\"submit\" id=\"submit\" required=\"required\" />"
+    echo "</fieldset>"
+      echo "</form>"
+}
+?>
 	</article>
 
 	<footer>
