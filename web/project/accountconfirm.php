@@ -29,8 +29,6 @@ $password = $_POST['password'];
   if ($myrow == FALSE){
       echo "<p>Your Email or Password are incorrect</p> <br />";
       echo "<a href=\"login.php\">Try Again!</a>";
-      echo $email;
-      echo $password;
   }else{
       $_SESSION['employeeid'] = $myrow['employeeid'];
       $_SESSION['firstn'] = $myrow['firstn'];
@@ -39,6 +37,16 @@ $password = $_POST['password'];
       $_SESSION['whid'] = $myrow['whid'];
       $_SESSION['email'] = $_POST['email'];
 
+
+        switch ($_SESSION['clearence']){
+            case "1";
+                echo "General Manager";
+                break;
+            case "2";
+                echo "Manager";
+                break;
+            default;
+                echo "Employee";
 
       echo "<p>You have successfully logged in " . $myrow['firstn'] . " " . $myrow['lastn'] . "</p><br />";
       echo "<a href=\"profile.php\">Click here to go to your profile!</a>";
