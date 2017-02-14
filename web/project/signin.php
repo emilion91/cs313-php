@@ -50,17 +50,11 @@ session_start();
                             <input id="password" name="password" type="password" /><br />
                             <label>Confirm Passwork:</label><br />
                             <input id="passconf" name="passconf" type="password" required="required" /><br />
-                            <label>Warehouse:</label><br />
-                            <select name="warehouse">
-                                
-                            </select><br />
                             <input type="submit" value="Sign Up" name="submit" id="submit" required="required" />
                         </fieldset>
                     </form>
 	          </article>
-            
 	          <footer>
-		            
 	          </footer>
 	      </div>
     </body> 
