@@ -4,11 +4,23 @@ function validateemail(){
 }
 
 function validate(){
-    var email = document.getElementById("email");
+    var email = document.getElementById("email").value;
     if (validateEmail(email)) {
         email.css("backgroundcolor", "green");
     } else {
         email.css("backgroundcolor", "red");
     }
     return false;
+}
+
+function passvalidation(){
+    var pass = document.getElementById("password").value;
+    var passvali = document.getElementById("passconf").value;
+
+    if (pass == passvali){
+        return true;
+    }else
+    {
+        return false;
+    }
 }

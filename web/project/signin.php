@@ -51,7 +51,7 @@ session_start();
                             <input id="password" name="password" type="password" /><br />
                             <label>Confirm Passwork:</label><br />
                             <input id="passconf" name="passconf" type="password" required="required" /><br />
-                            <input type="submit" value="Sign Up" name="submit" id="submit" onsubmit="return validate()" required="required" />
+                            <input type="submit" value="Sign Up" name="submit" id="submit" onsubmit="return passvalidation()" required="required" />
                         </fieldset>
                     </form>
 	          </article>
