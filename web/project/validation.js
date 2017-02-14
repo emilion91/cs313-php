@@ -21,6 +21,7 @@ function passvalidation(){
         return true;
     }else
     {
+        alert("Password doesn't match");
         return false;
     }
 }
