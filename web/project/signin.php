@@ -6,7 +6,7 @@ session_start();
 
     <head>
         <title>Sign Up</title>
-        <link rel="stylesheet" type="text/css" href="basicstyle.css">
+        <link rel="stylesheet" type="text/css" href="web/project/basicstyle.css">
         <script src="validation.js"></script>
     </head>
     <body>
@@ -50,7 +50,7 @@ session_start();
                             <label>Password:</label><br />
                             <input id="password" name="password" type="password" /><br />
                             <label>Confirm Passwork:</label><br />
-                            <input id="passconf" name="passconf" type="password" required="required" /><br />
+                            <input id="passconf" name="passconf" type="password" required="required" onblur="passvalidation()" /><br />
                             <input type="submit" value="Sign Up" name="submit" id="submit" onsubmit="return passvalidation()" required="required" />
                         </fieldset>
                     </form>
