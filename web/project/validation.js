@@ -6,9 +6,9 @@ function validateemail(){
 function validate(){
     var email = document.getElementById("email");
     if (validateEmail(email)) {
-        email.css("color", "green");
+        email.css("backgroundcolor", "green");
     } else {
-        email.css("color", "red");
+        email.css("backgroundcolor", "red");
     }
     return false;
 }
