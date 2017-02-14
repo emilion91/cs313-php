@@ -7,7 +7,7 @@ session_start();
     <head>
         <title>Sign Up</title>
         <link rel="stylesheet" type="text/css" href="basicstyle.css">
-        <script src="validation.js";
+        <script src="validation.js"></script>
     </head>
     <body>
         <?php
