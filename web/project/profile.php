@@ -36,7 +36,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
             }
 
             if ($_SESSION['whid'] == NULL && $_SESSION['clearence'] != 1){
-                echo "<h2 class=\"alert\" > You are not assigned to a warehouse</h2>";
+                echo "<h2 class=\"alert\" > You are not assigned to a warehouse. Please go here to assign one</h2>";
                 echo "<a href=\"alerts.php\">Profile Alerts</a>";
                 }
             ?>
