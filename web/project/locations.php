@@ -44,6 +44,9 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
         }else{
             while($row = pg_fetch_assoc($result)) {
 				        printf ("<strong>%s %s: %s - </strong> \"%s\" <br>",htmlspecialchars($myrow['whname']), htmlspecialchars($myrow['whaddress']));
+            }
+        }
+        
 ?>
     </fieldset>
 
