@@ -6,7 +6,7 @@ session_start();
 
     <head>
         <title>Sign Up</title>
-        <link rel="stylesheet" type="text/css" href="project/basicstyle.css">
+        <link rel="stylesheet" type="text/css" href="home1.css">
         <script src="validation.js"></script>
     </head>
     <body>
