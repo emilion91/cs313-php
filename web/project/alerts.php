@@ -26,6 +26,8 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
             </ul>
 	      </nav>
 
+        <h1>Profile Alerts</h1>
+
 	      <article>
            <form action="accountupdate.php" method="post" id="ourform">
 		           <fieldset>
@@ -71,7 +73,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
                    ?>
 
-		               <input type="submit" value="Log In" name="submit" id="submit" required="required" />
+		               <input type="submit" value="Update" name="submit" id="submit" required="required" />
 
 		</fieldset>
 		</form>
