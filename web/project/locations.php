@@ -46,11 +46,11 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 				        printf ("<strong>%s %s: %s - </strong> \"%s\" <br>",htmlspecialchars($myrow['whname']), htmlspecialchars($myrow['whaddress']));
             }
         }
-        
+
 ?>
     </fieldset>
 
-    <button onclick="window.location='newwarehouse.php';" value="Create a Warehouse" />
+    <button tyep="button" onclick="window.location='newwarehouse.php';">Create a Warehouse</button>
 	</article>
 
 	<footer>
