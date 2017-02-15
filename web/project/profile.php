@@ -42,7 +42,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
             if ($_SESSION['clearence'] == 1){
                 echo "<a href=\"locations.php\">Locations</a>";
-                echo "<a href=\"products.php\"></a>";
+                echo "<a href=\"products.php\">Products</a>";
                 }
             ?>
 
