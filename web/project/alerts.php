@@ -27,19 +27,52 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 	      </nav>
 
 	      <article>
-           <form action="accountconfirm.php" method="post" id="ourform">
+           <form action="accountupdate.php" method="post" id="ourform">
 		           <fieldset>
+                   <?php
 
-		               <label>Email:</label>
+                   if ($_SESSION['clearence'] == NULL){
+                       echo "<label>Select clearence level:</label>";
+                       echo "<select name=\"clearence\">";
+                       echo "<option value=\"2\">Warehouse Manager</option>";
+                       echo "<option value=\"3\">Warehouse Employee</option>";
+                       echo "</select>";
+                   }
 
-		               <input id="email" name="email" type="text" required="required" />
 
-                   <label>Password:</label>
 
-                   <input id="password" name="password" type="password" />
+                   if ($_SESSION['whid'] == NULL){
+
+                       $query = "SELECT * FROM warehouses";
+                       $result = pg_query($query);
+                       if (!$result) {
+                           echo "Problem with query " . $query . "<br/>";
+                           echo pg_last_error();
+                           exit();
+
+                       }
+
+                       $myrow = pg_fetch_assoc($result);
+                       if ($myrow == FALSE){
+                           echo "<h2 class=\"alert\" > No Warehouse Information on the database</h2>";
+                       }else{
+                           echo "<label>Select Warehouse:</label>";
+                           echo "<select name=\"warehouse\">";
+                           echo "<option value=\"" . $myrow['warehouseid'] . "\">" . $myrow['whname'] . "</option>";
+
+                           while ($myrow = pg_fetch_assoc($result)){
+                               echo "<option value=\"" . $myrow['warehouseid'] . "\">" . $myrow['whname'] . "</option>";
+                               }
+
+                           echo "</select>";
+
+                   }
+
+
+                   ?>
 
 		               <input type="submit" value="Log In" name="submit" id="submit" required="required" />
-                   
+
 		</fieldset>
 		</form>
 	      </article>
