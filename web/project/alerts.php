@@ -51,6 +51,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                            exit();
 
                        }
+                       }
 
                        $myrow = pg_fetch_assoc($result);
                        if ($myrow == FALSE){
@@ -67,7 +68,6 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                            echo "</select>";
 
                    }
-
 
                    ?>
 
