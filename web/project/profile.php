@@ -20,7 +20,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
 	      <nav>
             <ul>
-                <li><a class="bold" href="profile">Home</a></li>
+                <li><a class="bold" href="profile.php">Home</a></li>
                 <li><a class="bold" href="aboutus.php">About Us</a></li>
                 <li><a class="bold" href="alerts.php">Profile Alerts</a></li>
             </ul>
