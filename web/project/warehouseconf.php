@@ -25,7 +25,7 @@ if (!$result) {
     exit();
     }
 
-$query = "CREATE TABLE '$warehousen' (numproducts SERIAL PRIMARY KEY, productid INTEGER REFERENCES products(productid), productn TEXT, instock INTEGER, unitprice FLOAT)";
+$query = "CREATE TABLE $warehousen (numproducts SERIAL PRIMARY KEY, productid INTEGER REFERENCES products(productid), productn TEXT, instock INTEGER, unitprice FLOAT)";
 $result = pg_query($query);
 if (!$result) {
     echo "Problem with the query " . $query . "<br />";
