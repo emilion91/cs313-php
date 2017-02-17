@@ -14,7 +14,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
  password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
 
     $clearence = $_POST['clearence'];
-    $employeeid = $_SESSION['employee'];
+    $employeeid = $_SESSION['employeeid'];
     $query = "UPDATE employees SET CLEARENCE = '$clearence' WHERE employeeid = '$employeeid'";
 
 
