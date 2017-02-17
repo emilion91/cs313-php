@@ -54,9 +54,8 @@ if (!$result) {
             }
         }
         ?>
-    </select><br />
     <label>Warehouse Address:</label><br />
-    <input id="waddress" name="waddress" type="text" required="required" />
+    <input id="waddress" name="waddress" type="text" required="required" /><br />
     <input type="submit" value="Create" name="submit" id="submit" />
     </fieldset>
     </form>
