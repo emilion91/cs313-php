@@ -37,9 +37,9 @@ if (!$result) {
     <h2>Please fill all the fields below<h2>
 	<form action="warehouseconf.php" method="post" id="ourform">
     <fieldset>
-    <label>Warehouse Name:</label>
-    <input id="wname" name="email" type="text" required="required" />
-    <label>Select a Manager:</label>
+    <label>Warehouse Name:</label><br />
+    <input id="wname" name="wname" type="text" required="required" /><br />
+    <label>Select a Manager:</label><br />
     <select name="managerid">
         <?php
         $myrow = pg_fetch_assoc($result);
@@ -53,9 +53,9 @@ if (!$result) {
                 }
 }
         ?>
-    </select>
-    <label>Warehouse Address:</label>
-    <input id="waddress" name="email" type="text" required="required" />
+    </select><br />
+    <label>Warehouse Address:</label><br />
+    <input id="waddress" name="waddress" type="text" required="required" />
     <input type="submit" value="Create" name="submit" id="submit" />
     </fieldset>
     </form>
