@@ -17,7 +17,7 @@ $warehousen = $_POST['wname'];
 $managerid = $_POST['managerid'];
 $waddress = $_POST['waddress'];
 
-$query = "INSERT INTO warehouses (managerid, whname, whaddress) VALUES ('$managerid', '$warehousen', '$waddress'";
+$query = "INSERT INTO warehouses (managerid, whname, whaddress) VALUES ('$managerid', '$warehousen', '$waddress')";
 $result = pg_query($query);
 if (!$result) {
     echo "Problem with the query " . $query . "<br />";
