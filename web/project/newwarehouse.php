@@ -40,18 +40,20 @@ if (!$result) {
     <label>Warehouse Name:</label><br />
     <input id="wname" name="wname" type="text" required="required" /><br />
     <label>Select a Manager:</label><br />
-    <select name="managerid">
         <?php
         $myrow = pg_fetch_assoc($result);
         if ($myrow == FALSE){
-            echo "<h2 class=\"alert\" >No managers available</h2><br />";
+            echo "<p class=\"alert\" >No managers available</p><br />";
         } else {
+            echo "<select name=\"managerid\">"
             echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
             while($myrow = pg_fetch_assoc($result)){
                 echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
 
-                }
-}
+            }
+            echo "</select><br />";
+        }
+        
         ?>
     </select><br />
     <label>Warehouse Address:</label><br />
