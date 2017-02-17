@@ -13,7 +13,7 @@ session_start();
 $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplouemrf5 user=itenvwthrjxvzg
  password=fe4517ed2fd76bc283b5c66571a0fb4de965b489b47b2481a8e19bba1a7e399c');
 
-$query = "SELECT * FROM employees WHERE clearence = '2' AND assigned='false'"
+$query = "SELECT * FROM employees WHERE clearence = '2' AND assigned='false'";
 $result = pg_query($query);
 if (!$result) {
     echo "Problem with the query " . $query . "<br />";
