@@ -43,7 +43,7 @@ if (!$result) {
 
 $myrow = pg_fetch_assoc($result);
 if ($myrow == FALSE){
-    $query="INSERT INTO employees (firstn, lastn, email, password) VALUES ( '$firstn', '$lastn', '$email', '$password')";
+    $query="INSERT INTO employees (firstn, lastn, email, password, assigned) VALUES ( '$firstn', '$lastn', '$email', '$password', FALSE)";
 
 $result = pg_query($query);
 if (!$result) {
