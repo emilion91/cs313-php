@@ -45,7 +45,7 @@ if (!$result) {
         if ($myrow == FALSE){
             echo "<p class=\"alert\" >No managers available</p><br />";
         } else {
-            echo "<select name=\"managerid\">"
+            echo "<select name=\"managerid\">";
             echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
             while($myrow = pg_fetch_assoc($result)){
                 echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
