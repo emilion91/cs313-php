@@ -47,11 +47,11 @@ if (!$result) {
         } else {
             echo "<select name=\"managerid\">";
             echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
+
             while($myrow = pg_fetch_assoc($result)){
                 echo "<option value=\"" . $myrow['employeeid'] . "\">" . $myrow['lastn'] . ", " . $myrow['firstn'] . "</option>";
- echo "</select><br />";
-
             }
+            echo "</select><br />";
         }
         ?>
     <label>Warehouse Address:</label><br />
