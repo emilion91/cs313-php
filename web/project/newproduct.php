@@ -30,7 +30,7 @@ session_start();
     <input id="pname" name="pname" type="text" required="required" /><br />
     <label>Listed price:</label><br />
     <input id="price" name="price" type="number" required="required" step="any" min="0.01" /><br />    
-    <input type="submit" value="" name="submit" id="submit" />
+    <input type="submit" value="Add" name="submit" id="submit" />
     </fieldset>
     </form>
 	</article>
