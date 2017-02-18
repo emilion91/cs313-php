@@ -33,7 +33,7 @@ if (!$result) {
     </ul>
 	</nav>
 	<article>
-    <h1>Welcome to Warehous Creator</h1>
+    <h1>Welcome to Warehouse Creator</h1>
     <h2>Please fill all the fields below<h2>
 	<form action="warehouseconf.php" method="post" id="ourform">
     <fieldset>
