@@ -71,13 +71,14 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                        }
 
                    }else {
-                       echo "<p>Your are already assigned to a warehouse</p><br />"
+                       echo "<p>Your are already assigned to a warehouse</p><br />";
                    }
 
-                   ?>
 
-		               <input type="submit" value="Update" name="submit" id="submit" required="required" />
-
+if ($_SESSION['whid'] == NULL || $_SESSION['clearence'] == NULL){
+    echo "<input type=\"submit\" value=\"Update\" name=\"submit\" id=\"submit\" required=\"required\" />";
+}
+?>
 		</fieldset>
 		</form>
 	      </article>
