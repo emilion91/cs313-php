@@ -42,7 +42,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
         if ($myrow == FALSE){
             echo "<h2 class=\"alert\" >There are no Warehouses in the Database</h2>";
         }else{
-            echo "<table style=\"width:100%\"";
+            echo "<table style=\"width:100%\">";
             echo "<tr>";
             echo "<th>Name</th>";
             echo "<th>Location</th>";
@@ -83,6 +83,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                 echo "</tr>";
  
             }
+            echo "</table>";
 
         }
 
