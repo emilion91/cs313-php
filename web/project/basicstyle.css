@@ -13,6 +13,18 @@ img.footer {
 	height: 30px;
 }
 
+table{
+    width: 50%;
+}
+
+th{
+    height: 50px;
+}
+
+table, th, td {
+    border: 1px solid blue;
+}
+
 img.content {
 	display: block;
 	margin: auto;
