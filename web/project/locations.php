@@ -42,12 +42,48 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
         if ($myrow == FALSE){
             echo "<h2 class=\"alert\" >There are no Warehouses in the Database</h2>";
         }else{
-            printf ("<strong>%s %s: %s - </strong> \"%s\" <br>",htmlspecialchars($myrow['whname']), htmlspecialchars($myrow['whaddress']));
+            echo "<table style=\"width:100%\"";
+            echo "<tr>";
+            echo "<th>Name</th>";
+            echo "<th>Location</th>";
+            echo "<th>Manager</th>";
+            echo "</tr>";
 
-            while($myrow = pg_fetch_assoc($result)) {
-				        printf ("<strong>%s %s: %s - </strong> \"%s\" <br>",htmlspecialchars($myrow['whname']), htmlspecialchars($myrow['whaddress']));
+            echo "<tr>";
+            echo "<td>" . $myrow['whname'] . "</td>";
+            echo "<td>" . $myrow['whaddress'] . "</td>";
 
+            $emquery = "SELECT * FROM employees WHERE employeeid='" + $myrow['managerid'] +"'";
+            $emresult = pg_query($emquery);
+            if (!$result) {
+                echo "Problem with query " . $query . "<br/>";
+                echo pg_last_error();
+                exit();
             }
+            $emmyrow = pg_fetch_assoc($emresult);
+
+            echo "<td>" . $emmyrow['firstn'] . " " . $emmyrow['lastn'] . "</td>";
+            echo "</tr>";
+
+            while ($myrow = pg_fetch_assoc($result)){
+                echo "<tr>";
+                echo "<td>" . $myrow['whname'] . "</td>";
+                echo "<td>" . $myrow['whaddress'] . "</td>";
+
+                $emquery = "SELECT * FROM employees WHERE employeeid='" + $myrow['managerid'] +"'";
+                $emresult = pg_query($emquery);
+                if (!$result) {
+                    echo "Problem with query " . $query . "<br/>";
+                    echo pg_last_error();
+                    exit();
+                }
+                $emmyrow = pg_fetch_assoc($emresult);
+
+                echo "<td>" . $emmyrow['firstn'] . " " . $emmyrow['lastn'] . "</td>";
+                echo "</tr>";
+ 
+            }
+
         }
 
 ?>
