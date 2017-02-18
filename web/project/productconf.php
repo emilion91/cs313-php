@@ -35,9 +35,10 @@ if (!$result) {
 	</nav>
 	<article>
       <?php
-      echo $warehousen . " has been added";
-      echo "<a href=\"profile.php\">Home</a>";
-echo "<a href=\"products.php\">Products</a>";
+    echo $warehousen . " has been added";
+?>
+<a href="profile.php">Home</a>"
+<a href="products.php">Products</a>"
       ?>
 	</article>
 
