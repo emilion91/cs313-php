@@ -56,7 +56,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
             $emquery = "SELECT * FROM employees WHERE employeeid='" + $myrow['managerid'] +"'";
             $emresult = pg_query($emquery);
             if (!$emresult) {
-                echo "Problem with query " . $query . "<br/>";
+                echo "Problem with query " . $emquery . "<br/>";
                 echo pg_last_error();
                 exit();
             }
@@ -73,7 +73,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                 $emquery = "SELECT * FROM employees WHERE employeeid='" + $myrow['managerid'] +"'";
                 $emresult = pg_query($emquery);
                 if (!$emresult) {
-                    echo "Problem with query " . $query . "<br/>";
+                    echo "Problem with query " . $emquery . "<br/>";
                     echo pg_last_error();
                     exit();
                 }
