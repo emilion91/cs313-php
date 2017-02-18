@@ -44,8 +44,9 @@ if (!$result) {
 	</nav>
 	<article>
       <?php
-      echo "Warehouse " . $warehousen . " has been created";
-      echo "a href=\profile.php\">Home</a>";
+      echo "<h3>Warehouse " . $warehousen . " has been created</h3><br />";
+      echo "<a href=\"profile.php\">Home</a><br />";
+echo "<a href=\"locations.php\">Locations</a><br />";
       ?>
 	</article>
 
