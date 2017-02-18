@@ -35,10 +35,10 @@ if (!$result) {
 	</nav>
 	<article>
       <?php
-    echo $warehousen . " has been added";
+    echo "<h3>" . $pname . " has been added</h3><br />";
 ?>
-<a href="profile.php">Home</a>"
-<a href="products.php">Products</a>"
+      <a href="profile.php">Home</a><br />
+      <a href="products.php">Products</a><br />
       ?>
 	</article>
 
