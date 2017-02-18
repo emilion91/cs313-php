@@ -39,6 +39,8 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                        echo "<option value=\"2\">Warehouse Manager</option>";
                        echo "<option value=\"3\">Warehouse Employee</option>";
                        echo "</select>";
+                   }else {
+                       echo "<p>You already have a role</p><br />";
                    }
 
 
@@ -51,9 +53,6 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                            echo "Problem with query " . $query . "<br/>";
                            echo pg_last_error();
                            exit();
-
-                       }
-                       }
 
                        $myrow = pg_fetch_assoc($result);
                        if ($myrow == FALSE){
@@ -68,7 +67,11 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
                                }
 
                            echo "</select>";
+                       }
+                       }
 
+                   }else {
+                       echo "<p>Your are already assigned to a warehouse</p><br />"
                    }
 
                    ?>
