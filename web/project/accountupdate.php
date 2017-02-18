@@ -19,7 +19,7 @@ $db = pg_connect('host=ec2-23-21-238-246.compute-1.amazonaws.com dbname=dbfuplou
 
 if ($warehouse != NULL && $clearence != NULL){
     $whid = $_POST['warehouse'];
-    $query = "UPDATE employees SET clearence = '$clearence', whid = '$whid' WHERE employeeid = '$employeeid'";
+    $query = "UPDATE employees SET clearence = '$clearence', whid = '$whid', assigned = TRUE WHERE employeeid = '$employeeid'";
     $_SESSION['clearence'] = $clearence;
     $result = pg_query($query);
     if (!$result) {
@@ -45,7 +45,7 @@ if ($warehouse == NULL && $clearence != NULL){
 
 if ($warehouse != NULL && $clearence == NULL){
     $whid = $_POST['warehouse'];
-    $query = "UPDATE employees SET whid = '$whid' WHERE employeeid = '$employeeid'";
+    $query = "UPDATE employees SET whid = '$whid', assigned = TRUE WHERE employeeid = '$employeeid'";
     $result = pg_query($query);
     if (!$result) {
         echo "Problem with query " . $query . "<br/>";
